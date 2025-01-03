@@ -1,13 +1,32 @@
-public class Filme {
-    String nome;
+package br.com.javafilmes.series.modelos;
+
+public class Titulo {
+    public String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes; //privei
     private int totalDeAvaliacoes;
-    private int duracaoEmMinutos;
+    public int duracaoEmMinutos;
 
     //get
-    int getTotalDeAvaliacoes(){
+
+    public String getNome(){
+        return nome;
+    }
+
+    public int getAnoDeLancamento(){
+        return anoDeLancamento;
+    }
+
+    public boolean isIncluidoNoPlano(){
+        return incluidoNoPlano;
+    }
+
+    public  int getDuracaoEmMinutos(){
+        return duracaoEmMinutos;
+    }
+
+    public  int getTotalDeAvaliacoes(){
         return totalDeAvaliacoes;
     }
 
@@ -28,17 +47,18 @@ public class Filme {
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
-    void  exibeFichaTecnica(){
+    public void exibeFichaTecnica(){
         System.out.println("Nome do filme: " + nome);
         System.out.println("Ano de lançamento: " + anoDeLancamento);
     }
 
-    void avalia(double nota){
+   public void avalia(double nota){
         somaDasAvaliacoes += nota;
         totalDeAvaliacoes++;
     }
 
-    double pegaMedia(){
+   public double pegaMedia(){
         return  somaDasAvaliacoes / totalDeAvaliacoes;
     }
 }
+
