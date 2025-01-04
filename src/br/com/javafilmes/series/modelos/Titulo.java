@@ -1,12 +1,17 @@
 package br.com.javafilmes.series.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     public String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes; //privei
     private int totalDeAvaliacoes;
     public int duracaoEmMinutos;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
 
     //get
 
@@ -59,6 +64,11 @@ public class Titulo {
 
    public double pegaMedia(){
         return  somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }
 
